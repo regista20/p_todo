@@ -2,22 +2,23 @@
 
 <table>
   <tr>
-    <th>Content</th>
-    <th>Done</th>
+    <th>Incomplete</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @tasks.each do |task| %>
+<%= render @incomplete_tasks %>
+</table>
+
+<table>
   <tr>
-    <td><%= task.content %></td>
-    <td><%= task.done %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <th>Complete</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
-<% end %>
+<%= render @complete_tasks %>
 </table>
 
 <br />

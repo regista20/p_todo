@@ -1,0 +1,10 @@
+<%= form_for task do |f| %>
+  <tr>
+    <td><%= f.check_box :done %></td>
+    <td><%= f.label task.content %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= f.submit "update" %></td>
+  </tr>
+<% end %>

@@ -12,5 +12,5 @@
 class Task < ActiveRecord::Base
   attr_accessible :content, :done
 
-  validates :content, presence: true, length: { maximum: 50 }
+
 end
