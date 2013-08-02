@@ -7,9 +7,11 @@
     <th></th>
     <th></th>
   </tr>
-
-<%= render @incomplete_tasks %>
 </table>
+
+<div id="incomplete_tasks">
+  <%= render @incomplete_tasks %>
+</div>
 
 <table>
   <tr>
@@ -18,9 +20,13 @@
     <th></th>
     <th></th>
   </tr>
-<%= render @complete_tasks %>
 </table>
+
+<div id="complete_tasks">
+  <%= render @complete_tasks %>
+</div>
+
 
 <br />
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New Task', new_task_path, remote: true, id: "new_link" %>

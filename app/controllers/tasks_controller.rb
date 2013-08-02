@@ -4,7 +4,6 @@ class TasksController < ApplicationController
   def index
     @incomplete_tasks = Task.where(done: false)
     @complete_tasks = Task.where(done: true)
-    @task = Task.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,6 +30,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @task }
+      format.js
     end
   end
 
@@ -48,6 +48,7 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render json: @task, status: :created, location: @task }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -64,6 +65,7 @@ class TasksController < ApplicationController
       if @task.update_attributes(params[:task])
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @task.errors, status: :unprocessable_entity }
