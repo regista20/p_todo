@@ -2,8 +2,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @incomplete_tasks = Task.where(done: false)
-    @complete_tasks = Task.where(done: true)
+    @incomplete_tasks = Task.where(done: false).order( "due_date ASC" )
+    @complete_tasks = Task.where(done: true).order( "due_date ASC" )
 
     respond_to do |format|
       format.html # index.html.erb

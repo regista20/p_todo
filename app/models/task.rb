@@ -10,7 +10,7 @@
 #
 
 class Task < ActiveRecord::Base
-  attr_accessible :content, :done
+  attr_accessible :content, :done, :due_date
 
   validates :content, presence: true, length: { maximum: 50 }
 end

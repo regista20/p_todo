@@ -14,6 +14,7 @@
   <div class="field">
     <%= f.label :content %><br />
     <%= f.text_field :content %>
+    <%= f.date_select :due_date, use_month_numbers: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
